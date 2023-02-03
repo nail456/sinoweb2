@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/sinoweb2/static/css/main.824dcea7.css",
-    "main.js": "/sinoweb2/static/js/main.7ff2141a.js",
+    "main.js": "/sinoweb2/static/js/main.0637cd82.js",
     "static/js/787.4e20b15d.chunk.js": "/sinoweb2/static/js/787.4e20b15d.chunk.js",
     "static/media/logo.svg": "/sinoweb2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/sinoweb2/index.html",
     "main.824dcea7.css.map": "/sinoweb2/static/css/main.824dcea7.css.map",
-    "main.7ff2141a.js.map": "/sinoweb2/static/js/main.7ff2141a.js.map",
+    "main.0637cd82.js.map": "/sinoweb2/static/js/main.0637cd82.js.map",
     "787.4e20b15d.chunk.js.map": "/sinoweb2/static/js/787.4e20b15d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.824dcea7.css",
-    "static/js/main.7ff2141a.js"
+    "static/js/main.0637cd82.js"
   ]
 }
