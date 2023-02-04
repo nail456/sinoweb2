@@ -38,12 +38,12 @@
     font-size: 16px;
 }
 
-.btn {
+/* .btn {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     margin-top: 20px;
-}
+} */
 
 .btn-primary {
     background-color: blue;
@@ -54,4 +54,43 @@
     background-color: white;
     color: blue;
     border: 1px solid blue;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+}
+
+.btn {
+    background: #333;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.btn:hover {
+    background: #444;
 }

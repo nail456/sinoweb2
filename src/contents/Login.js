@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Register from "./Register";
 import axios from 'axios';
 
 import "./style.css";
 
-function Login() {
+function Login({ onLogin }) {
   const [isRegister, setIsRegister] = React.useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   if (isRegister) {
     return <Register />;
   }
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:4000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!res.ok) {
+        throw new Error("Incorrect email or password");
+      }
+
+      onLogin(email);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -21,6 +46,7 @@ function Login() {
             type="email"
             id="email"
             className="form-control"
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -29,8 +55,10 @@ function Login() {
             type="password"
             id="password"
             className="form-control"
+            onChange={e => setPassword(e.target.value)}
           />
         </div>
+        {error && <div className="error">{error}</div>}
         <button
           type="button"
           className="btn btn-secondary"
@@ -38,7 +66,7 @@ function Login() {
         >
           Register
         </button>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" onClick = {handleSubmit}>
           Login
         </button>
       </form>
