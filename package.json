@@ -1,5 +1,5 @@
 {
-  "homepage": "https://nail456.github.io/sinoweb2",
+  "homepage": "https://nail456.github.io",
   "name": "sinoweb2",
   "version": "0.1.0",
   "private": true,
@@ -11,14 +11,16 @@
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
+    "firebase": "^9.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "sqlite3": "^5.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --open",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",

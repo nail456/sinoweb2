@@ -1,0 +1,51 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home-user-info {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home-orders-container {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.home-order-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+.home-add-button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn {
+    background: #333;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 0rem;
+}

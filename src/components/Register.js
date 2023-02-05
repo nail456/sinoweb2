@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Login from "./Login";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 const Register = () => {
@@ -15,20 +15,20 @@ const Register = () => {
     e.preventDefault();
     if (!email) {
       setError("Email is required");
-    } else if (!firstname){
+    } else if (!firstname) {
       setError("Firstname is required");
     } else if (!lastname) {
       setError("Lastname is required");
     } else if (!password) {
       setError("Password is required");
-    } else if (!confirmPassword){
+    } else if (!confirmPassword) {
       setError("Please confirm password");
-    } else if (confirmPassword !== password){
+    } else if (confirmPassword !== password) {
       setError("Password doesn't match");
     } else if (firstname && lastname && email && confirmPassword === password) {
       setError("");
       // Post the registration data to the API
-      fetch("http://localhost:4000/register", {
+      fetch("http://172.20.10.5:4000/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,16 +50,16 @@ const Register = () => {
     }
   };
 
-  const [isLogin, setIsLogin] = React.useState(false);
+  // const [isLogin, setIsLogin] = React.useState(false);
 
-  if (isLogin) {
-    return <Login />;
-  }
+  // if (isLogin) {
+  //   return <Link to="/" />;
+  // }
 
   const handleClosePopup = () => {
     setShowPopup(false);
     // Redirect to the Login page
-    setIsLogin(true);
+    <Link to="/" />
   };
 
   return (
@@ -69,7 +69,7 @@ const Register = () => {
         {error && <div className="error">{error}</div>}
         <div className="form-group">
           <input
-            type="text"
+            type="email"
             className="form-control"
             placeholder="Email"
             value={email}
@@ -112,23 +112,25 @@ const Register = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
-        <button type="button"
-          className="btn btn-secondary"
-          onClick={() => setIsLogin(true)}>
-          Back
-        </button>
+        <Link to="/">
+          <button type="submit" className="btn btn-secondary">
+            Back
+          </button>
+        </Link>
         <button className="btn btn-primary" onClick={handleRegister}>
           Register
         </button>
       </form>
       {showPopup && (
-        <div className="popup-content">
-          <div className="popup">
+        <div className="popup">
+          <div className="content">
             <h3 className="popup-title">Registration Successful!</h3>
             <p className="popup-message">Your account has been created successfully.</p>
-            <button className="btn btn-secondary" onClick={handleClosePopup}>
-              OK
-            </button>
+            <Link to="/">
+              <button type="submit" className="btn btn-secondary" onClick={handleClosePopup}>
+                Go to login
+              </button>
+            </Link>
           </div>
         </div>
       )}
