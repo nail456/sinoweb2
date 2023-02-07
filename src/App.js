@@ -8,6 +8,7 @@ import {
 import Register from './components/Register';
 import LoginPage from './components/Login';
 import HomePage from './components/Home';
+import StorePage from './components/StorePage'
 import { UserProvider } from './components/UserContext';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<LoginPage/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/home" element={<HomePage/>} />
+          <Route path="/store" element={<StorePage/>} />
         </Routes>
       </Router>
     </UserProvider>

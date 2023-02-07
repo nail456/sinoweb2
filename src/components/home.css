@@ -49,3 +49,10 @@
     cursor: pointer;
     margin-left: 0rem;
 }
+
+.input-modal {
+    width: fit-content;
+    min-width: 50px;
+    display: flex;
+    /* minimum width */
+}
